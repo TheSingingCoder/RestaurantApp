@@ -1,0 +1,16 @@
+﻿@model List<Day4RestaurantApp.Models.Restaurant>
+           <form action="/Home/Index" method="post">
+               <input type="text" name="name" placeholder="Name" />
+               <input type="text" name="cuisine" placeholder="cuisine" />
+               <input type="number" min="0" max="5" name="rating" placeholder="rating"/>
+               <input type="text" name="image" placeholder="picture" />
+               <input type="submit" />
+
+           </form>
+<h2>Restaurants</h2>
+<ul>
+    @foreach (var Restaurant in Model)
+{
+    <li><a href="/Home/Details/@Restaurant.Id"> @Restaurant.Name </a> </li>
+}
+</ul>
